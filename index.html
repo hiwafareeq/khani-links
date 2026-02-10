@@ -17,16 +17,17 @@
 
     <div class="left-text">
         <h2>دکتۆر محی الدین محمدخانی</h2>
+        <h2 style="font-family: 'Cormorant Garamond', serif; text-wrap: nowrap;">Moheydin Mohammedkhani</h2>
     </div>
 
     <div class="links-wrapper" id="dock">
-        <a href="#" class="link-box"><i class="fab fa-instagram"></i><h3>Instagram</h3></a>
-        <a href="#" class="link-box"><i class="fab fa-facebook"></i><h3>Facebook</h3></a>
-        <a href="#" class="link-box"><i class="fas fa-globe"></i><h3>Website</h3></a>
-        <a href="#" class="link-box"><i class="fab fa-youtube"></i><h3>Youtube</h3></a>
-        <a href="#" class="link-box"><i class="fab fa-tiktok"></i><h3>Tiktok</h3></a>
-        <a href="#" class="link-box"><i class="fas fa-envelope"></i><h3>Email</h3></a>
-        <a href="#" class="link-box"><i class="fab fa-telegram"></i><h3>Telegram</h3></a>
+        <a href="https://www.instagram.com/dr.mohammedkhani" class="link-box"><i class="fab fa-instagram"></i><h3>Instagram</h3></a>
+        <a href="https://www.facebook.com/MTKA2019" class="link-box"><i class="fab fa-facebook"></i><h3>Facebook</h3></a>
+        <a href="https://mohammedkhani.com/" class="link-box"><i class="fas fa-globe"></i><h3>Website</h3></a>
+        <a href="https://www.youtube.com/@Dr.Mohammedkhani" class="link-box"><i class="fab fa-youtube"></i><h3>Youtube</h3></a>
+        <a href="https://www.tiktok.com/@dr.mohammed_khani" class="link-box"><i class="fab fa-tiktok"></i><h3>Tiktok</h3></a>
+        <a href="mailto:info@mohammedkhani.com" class="link-box"><i class="fas fa-envelope"></i><h3>Email</h3></a>
+        <a href="https://t.me/xavhdgne" class="link-box"><i class="fab fa-telegram"></i><h3>Telegram</h3></a>
     </div>
 
 </div>
@@ -34,69 +35,34 @@
 <footer class="designer">
     Designed by <span><a href="https://www.hiwafareeq.dev/">Hiwa Fareeq</a></span>
 </footer>
-
 <script>
 const dock = document.getElementById('dock');
 const icons = dock.querySelectorAll('.link-box');
 
-dock.addEventListener('mousemove', (e) => {
-    icons.forEach(icon => {
-        const rect = icon.getBoundingClientRect();
-        const iconCenter = rect.left + rect.width / 2;
-        const distance = Math.abs(e.clientX - iconCenter);
+/* Only enable hover effect on desktop */
+if (window.innerWidth > 768) {
 
-        let scale = 1;
-        if (distance < 150) {
-            scale = 1 + (150 - distance) / 150 * 0.25;
-        }
+    dock.addEventListener('mousemove', (e) => {
+        icons.forEach(icon => {
+            const rect = icon.getBoundingClientRect();
+            const iconCenter = rect.left + rect.width / 2;
+            const distance = Math.abs(e.clientX - iconCenter);
 
-        icon.style.transform = `scale(${scale})`;
-    });
-});
+            let scale = 1;
+            if (distance < 150) {
+                scale = 1 + (150 - distance) / 150 * 0.25;
+            }
 
-dock.addEventListener('mouseleave', () => {
-    icons.forEach(icon => icon.style.transform = 'scale(1)');
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-
-    var occupations = [
-        'بەرپرسی بەشی توێژینەوە - زانکۆی سلێمانی',
-        'ژینگەدۆست',
-        'مامۆستای زانکۆ - زانکۆی سلێمانی'
-    ];
-
-    var leftText = document.querySelector('.left-text');
-    var ul = document.createElement('ul');
-    ul.className = 'occupations';
-
-    var items = occupations.map(function (text) {
-        var li = document.createElement('li');
-        li.textContent = text;
-        ul.appendChild(li);
-        return li;
+            icon.style.transform = `scale(${scale})`;
+        });
     });
 
-    leftText.appendChild(ul);
-
-    var current = 0;
-    var FADE_DURATION = 600;
-    var DISPLAY_TIME = 3000;
-
-    function showNext() {
-        var li = items[current];
-        li.classList.add('visible');
-
-        setTimeout(function () {
-            li.classList.remove('visible');
-            current = (current + 1) % items.length;
-            showNext();
-        }, DISPLAY_TIME);
-    }
-
-    showNext();
-});
+    dock.addEventListener('mouseleave', () => {
+        icons.forEach(icon => icon.style.transform = 'scale(1)');
+    });
+}
 </script>
+
 
 </body>
 </html>
