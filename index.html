@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr.MohammedKhani Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-text">
+            <h2>دکتۆر محی الدین محمدخانی</h2>
+            <ul class="occupations">
+                <li>بەرپرسی بەشی توێژینەوە - زانکۆی سلێمانی</li>
+                <li>ژینگەدۆست</li>
+                <li>مامۆستای زانکۆ - زانکۆی سلێمانی</li>
+            </ul>
+        </div>
+        <div class="links-wrapper">
+            <a href="#" class="link-box" id="instagram">
+                <i class="fab fa-instagram"></i>
+                <h3>Instagram</h3>
+            </a>
+            <a href="#" class="link-box" id="facebook">
+                <i class="fab fa-facebook"></i>
+                <h3>Facebook</h3>
+            </a>
+            <a href="#" class="link-box" id="website">
+                <i class="fas fa-globe"></i>
+                <h3>Website</h3>
+            </a>
+            <a href="#" class="link-box" id="youtube">
+                <i class="fab fa-youtube"></i>
+                <h3>Youtube</h3>
+            </a>
+            <a href="#" class="link-box" id="tiktok">
+                <i class="fab fa-tiktok"></i>
+                <h3>Tiktok</h3>
+            </a>
+            <a href="#" class="link-box" id="email">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+            </a>
+            <a href="#" class="link-box" id="telegram">
+                <i class="fab fa-telegram"></i>
+                <h3>Telegram</h3>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.left-text .occupations li');
+    if (!items.length) return;
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+        items.forEach(li => li.classList.add('visible'));
+        return;
+    }
+    items.forEach((li, i) => {
+        setTimeout(() => li.classList.add('visible'), i * 150);
+    });
+});
+</script>
