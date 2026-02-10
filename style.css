@@ -19,6 +19,21 @@ body {
     color: white;
 }
 
+.left-text hr {
+    border: none;
+    height: 1px;
+    width: 360px;
+    margin: auto;
+    margin-top: 2rem;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.9),
+        transparent
+    );
+    border-radius: 10px;
+}
+
 /* Mobile Background */
 @media (max-width: 768px) {
     body {
